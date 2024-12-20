@@ -1,0 +1,11 @@
+
+sudo airmon-ng check kill
+
+sudo airmon-ng start wlan0 <opt-ch>
+
+sudo iw dev wlan0mon info
+
+sudo airmon-ng stop wlan0mon
+
+
+
