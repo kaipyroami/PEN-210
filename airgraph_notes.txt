@@ -1,0 +1,6 @@
+The Client Probe Graph (CPG):
+airgraph-ng -o Picture2.png -i dump-01.csv -g CPG
+
+The Clients to AP Relationship (CAPR):
+airgraph-ng -o Picture1.png -i dump-01.csv -g CAPR
+
