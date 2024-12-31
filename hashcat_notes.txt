@@ -1,0 +1,9 @@
+hashcat -m 22000 hash.hc22000 cracked.txt.gz
+
+hashcat -m 22000 hash.hc22000 -a 3 ?d?d?d?d?d?d?d?d
+
+hashcat -m 22000 hash.hc22000 -r rules/best64.rule cracked.txt.gz
+
+4 way handshake(2500)
+pmkid(22000)
+

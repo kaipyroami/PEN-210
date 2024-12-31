@@ -18,7 +18,7 @@ sudo apt update && sudo apt upgrade -y
 # Install desired packages
 sudo apt install -y wireshark aircrack-ng airgraph-ng \
   john hashcat crunch rsmangler cowpatty bettercap \
-  kismet wordlists name-that-hash
+  kismet wordlists name-that-hash hashcat-utils
 
 # Clean up
 sudo apt autoremove -y
